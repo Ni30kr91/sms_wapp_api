@@ -10,13 +10,13 @@ import (
 
 func sendWp(quote string) {
 
-	apiurl := "https://api.twilio.com/2010-04-01/Accounts/AC2411e21ed7f6ae68ceadc9f94f71e821/Messages.json"
+	apiurl := "https://api.twilio.com/2010-04-01/Accounts/AC71b7dd8470ec0632e19c655e1ee43745/Messages.json"
 	method := "POST"
 
 	data := url.Values{}
-	data.Set("To", "whatsapp:+917751085627")
+	data.Set("To", "whatsapp:+917205767391")
 	data.Set("From", "whatsapp:+14155238886")
-	data.Set("MessagingServiceSid", "iR3zdSPkQHfgR9QyeRQRWvkaZeknPjmQ")
+	//data.Set("MessagingServiceSid", "iR3zdSPkQHfgR9QyeRQRWvkaZeknPjmQ")
 	data.Set("Body", quote)
 	client := &http.Client{}
 	req, err := http.NewRequest(method, apiurl, strings.NewReader(data.Encode()))
@@ -25,7 +25,7 @@ func sendWp(quote string) {
 		fmt.Println(err)
 		return
 	}
-	req.Header.Add("Authorization", "Basic QUMyNDExZTIxZWQ3ZjZhZTY4Y2VhZGM5Zjk0ZjcxZTgyMTo0NDJjNTcyZDg5NjU1Y2IzNDBjNTNlYjBkMjMzOTVlNg==")
+	req.Header.Add("Authorization", "Basic QUM3MWI3ZGQ4NDcwZWMwNjMyZTE5YzY1NWUxZWU0Mzc0NTo5M2YyMmYyZjg3NTZlN2E4NzZhOGU4YmUwZTZjZGQwZQ==")
 	req.Header.Add("Content-Type", "application/x-www-form-urlencoded")
 
 	res, err := client.Do(req)
